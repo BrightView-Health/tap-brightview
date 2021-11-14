@@ -3248,6 +3248,8 @@ REQUIRED_TABLES = {
     "staff_credential": StaffCredential,
     "trans_reason": TransReason,
     "transaction": Transaction,
+    "mv_client_dsm5_diag": MvClientDsm5Diag,
+    "cf_data_hist": CfDataHist,
 }
 
 MONDAY = {
@@ -3269,7 +3271,6 @@ MONDAY = {
     "audit_row_delete": AuditRowDelete,
     "cash_sheet": CashSheet,
     "cash_sheet_line": CashSheetLine,
-    "cf_data_hist": CfDataHist,
     "claim_bill_next": ClaimBillNext,
     "claim_diag": ClaimDiag,
     "claim_engine_run": ClaimEngineRun,
@@ -3408,7 +3409,6 @@ FRIDAY = {
     "mv_claim": MvClaim,
     "mv_client": MvClient,
     "mv_client_diagnosis": MvClientDiagnosis,
-    "mv_client_dsm5_diag": MvClientDsm5Diag,
     "mv_client_dsm5_diag_dtl": MvClientDsm5DiagDtl,
     "mv_payment": MvPayment,
     "mv_scheduled_activities": MvScheduledActivities,
