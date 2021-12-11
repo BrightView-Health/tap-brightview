@@ -3250,6 +3250,7 @@ REQUIRED_TABLES = {
     "transaction": Transaction,
     "mv_client_dsm5_diag": MvClientDsm5Diag,
     "cf_data_hist": CfDataHist,
+    "master_modifier": MasterModifier,
 }
 
 MONDAY = {
@@ -3365,7 +3366,6 @@ WEDNESDAY = {
     "licensure": Licensure,
     "macsis_adm_dis": MacsisAdmDis,
     "macsis_adm_dis_data": MacsisAdmDisData,
-    "master_modifier": MasterModifier,
     "master_modifier_detail": MasterModifierDetail,
     "master_modifier_org_map": MasterModifierOrgMap,
     "measure": Measure,
