@@ -3196,6 +3196,9 @@ class TxPlanGridSubProb(IncrementalStream):
     replication_key = "last_commit_time"
 
 REQUIRED_TABLES = {
+    "mv_client_dsm5_diag": MvClientDsm5Diag,
+    "cf_data_hist": CfDataHist,
+    "master_modifier": MasterModifier,
     "activity": Activity,
     "activity_detail": ActivityDetail,
     "activity_log": ActivityLog,
@@ -3248,9 +3251,6 @@ REQUIRED_TABLES = {
     "staff_credential": StaffCredential,
     "trans_reason": TransReason,
     "transaction": Transaction,
-    "mv_client_dsm5_diag": MvClientDsm5Diag,
-    "cf_data_hist": CfDataHist,
-    "master_modifier": MasterModifier,
 }
 
 MONDAY = {
