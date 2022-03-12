@@ -3252,6 +3252,7 @@ REQUIRED_TABLES = {
     "staff_credential": StaffCredential,
     "trans_reason": TransReason,
     "transaction": Transaction,
+    "mv_impact_data_response": MvImpactDataResponse,
 }
 
 MONDAY = {
@@ -3423,7 +3424,6 @@ FRIDAY = {
     "order_config_setup": OrderConfigSetup,
     "order_config_type": OrderConfigType,
     "order_group": OrderGroup,
-    "mv_impact_data_response": MvImpactDataResponse,
     "order_module": OrderModule,
     "order_master": OrderMaster,
     "order_master_type": OrderMasterType,
