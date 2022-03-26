@@ -3196,16 +3196,16 @@ class TxPlanGridSubProb(IncrementalStream):
     replication_key = "last_commit_time"
 
 REQUIRED_TABLES = {
-    "mv_transactions": MvTransactions,
-    "mv_client_dsm5_diag": MvClientDsm5Diag,
     "cf_data_hist": CfDataHist,
+    "cf_data": CfData,
+    "mv_client_document": MvClientDocument,
+    "mv_client_dsm5_diag": MvClientDsm5Diag,
     "master_modifier": MasterModifier,
     "activity": Activity,
     "activity_detail": ActivityDetail,
     "activity_log": ActivityLog,
     "address": Address,
     "admin_group": AdminGroup,
-    "cf_data": CfData,
     "claim": Claim,
     "claim_batch": ClaimBatch,
     "claim_batch_line": ClaimBatchLine,
@@ -3236,7 +3236,6 @@ REQUIRED_TABLES = {
     "mod_tx_plan_note": ModTxPlanNote,
     "mod_tx_plan_note_addr": ModTxPlanNoteAddr,
     "mod_vitals": ModVitals,
-    "mv_client_document": MvClientDocument,
     "payer_plan": PayerPlan,
     "person": Person,
     "person_address": PersonAddress,
@@ -3253,6 +3252,7 @@ REQUIRED_TABLES = {
     "trans_reason": TransReason,
     "transaction": Transaction,
     "mv_impact_data_response": MvImpactDataResponse,
+    "mv_transactions": MvTransactions,
 }
 
 MONDAY = {
