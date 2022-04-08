@@ -3251,7 +3251,7 @@ REQUIRED_TABLES = {
     "staff_credential": StaffCredential,
     "trans_reason": TransReason,
     "transaction": Transaction,
-    "mv_impact_data_response": MvImpactDataResponse,
+#     "mv_impact_data_response": MvImpactDataResponse,
     "mv_transactions": MvTransactions,
 }
 
