@@ -41,25 +41,28 @@ class HiveClient:
         
         if table == "procedure":
             table = "`procedure`"
-
+        
         LOGGER.info("Querying DB")
-        self.sql.execute(
-            "SELECT * "
-            + f"FROM {table} "
-            + f'WHERE {limit_key} >= "{limit_key_value}" '
-            + order_by
-            + f"LIMIT {limit} OFFSET {offset}"
-        )
-
+        if table == "mv_impact_data_response":
+            query = f"""SELECT * 
+                FROM 
+                (select *,
+                case when last_operation_time is null then created_date 
+                else last_operation_time 
+                end as incremental_key
+                from {table} ) sub_query
+                WHERE incremental_key >= "{limit_key_value}"  
+                order_by LIMIT {limit} OFFSET {offset}"""
+        else:
+            query = "SELECT * "
+                + f"FROM {table} "
+                + f'WHERE {limit_key} >= "{limit_key_value}" '
+                + order_by
+                + f"LIMIT {limit} OFFSET {offset}"
+        LOGGER.info("Running query ", query)
+        self.sql.execute(query)
         LOGGER.info("Query Complete.  Starting rows")
         row = ""
 
         while row is not None:
             row_count += 1
-            row = self.sql.fetchone()
-            if row == None:
-                self.sql._close_last()
-                return row
-            if row_count % 10000 == 0:
-                LOGGER.info(f"Row count = {row_count}")
-            yield helper.create_json_response(schema, row)
