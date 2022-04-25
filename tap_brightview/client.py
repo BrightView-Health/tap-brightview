@@ -43,6 +43,11 @@ class HiveClient:
             table = "`procedure`"
 
         LOGGER.info("Querying DB")
+        LOGGER.info( "SELECT * "
+            + f"FROM {table} "
+            + f'WHERE {limit_key} >= "{limit_key_value}" '
+            + order_by
+            + f"LIMIT {limit} OFFSET {offset}")
         self.sql.execute(
             "SELECT * "
             + f"FROM {table} "
