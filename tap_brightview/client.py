@@ -25,27 +25,27 @@ class HiveClient:
         limit=1000,
         offset=0,
         limit_key="last_operation_time",
-        limit_key_value="1970-01-11 00:00:00.000000",
-    ):
+        limit_key_value="1970-01-11 00:00:00.000000"):
         row_count = 0
-        order_by = f"ORDER BY {limit_key}, {id} "
+        order_by = f"ORDER BY {limit_key}, {id}"
         if id == None:
-            order_by = f"ORDER BY {limit_key} "
-
+            order_by = "ORDER BY" + limit_key
         if table == "procedure":
             table = "`procedure`"
-        
         LOGGER.info("Querying DB")
         if table == "mv_impact_data_response":
-            query = "SELECT * FROM (select *,case when last_operation_time is null then created_date else last_operation_time end as incremental_key from mv_impact_data_response ) sub_query" + f'WHERE incremental_key >= "{limit_key_value}" ' + order_by  + f"LIMIT {limit} OFFSET {offset}"
+            self.sql.execute("SELECT * FROM"
+            + "(select *,case when last_operation_time is null then created_date else last_operation_time end as incremental_key from mv_impact_data_response ) sub_query "
+            + f'WHERE incremental_key >= "{limit_key_value}" '
+            + order_by
+            + f"LIMIT {limit} OFFSET {offset}")
         else:
-            query = "SELECT * "
-                + f"FROM {table} "
-                + f'WHERE {limit_key} >= "{limit_key_value}" '
-                + order_by
-                + f"LIMIT {limit} OFFSET {offset}"
-        LOGGER.info("Running query ", query)
-        self.sql.execute(query)
+            self.sql.execute("SELECT * "
+            + f"FROM {table} "
+            + f'WHERE {limit_key} >= "{limit_key_value}" '
+            + order_by
+            + f"LIMIT {limit} OFFSET {offset}")
+        # LOGGER.info("Running query ", query)
         LOGGER.info("Query Complete.  Starting rows")
         row = ""
 
