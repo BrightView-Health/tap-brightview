@@ -37,13 +37,7 @@ class HiveClient:
         
         LOGGER.info("Querying DB")
         if table == "mv_impact_data_response":
-            query = "SELECT * "
-                + "FROM"
-                + "(select *,"
-                + "case when last_operation_time is null then created_date"
-                + "else last_operation_time"
-                + "end as incremental_key"
-                + f"from {table} ) sub_query"
+            query = "SELECT * FROM (select *,case when last_operation_time is null then created_date else last_operation_time end as incremental_key from mv_impact_data_response ) sub_query"
                 + f'WHERE incremental_key >= "{limit_key_value}" '  
                 + order_by 
                 + f"LIMIT {limit} OFFSET {offset}"
