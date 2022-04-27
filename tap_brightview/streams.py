@@ -2390,8 +2390,8 @@ class MvImpactDataResponse(IncrementalStream):
     tap_stream_id = "mv_impact_data_response"
     key_properties = ["mod_measure_response_dtl_id"]
     replication_method = "INCREMENTAL"
-    valid_replication_keys = ["last_commit_time"]
-    replication_key = "last_commit_time"
+    valid_replication_keys = ["incremental_key"]
+    replication_key = "incremental_key"
 
 
 class MvPayment(IncrementalStream):
@@ -3196,13 +3196,13 @@ class TxPlanGridSubProb(IncrementalStream):
     replication_key = "last_commit_time"
 
 REQUIRED_TABLES = {
+    "activity": Activity,
     "mv_impact_data_response": MvImpactDataResponse,
     "cf_data_hist": CfDataHist,
     "cf_data": CfData,
     "mv_client_document": MvClientDocument,
     "mv_client_dsm5_diag": MvClientDsm5Diag,
     "master_modifier": MasterModifier,
-    "activity": Activity,
     "activity_detail": ActivityDetail,
     "activity_log": ActivityLog,
     "address": Address,
