@@ -3197,7 +3197,6 @@ class TxPlanGridSubProb(IncrementalStream):
 
 REQUIRED_TABLES = {
     "activity": Activity,
-    "mv_impact_data_response": MvImpactDataResponse,
     "cf_data_hist": CfDataHist,
     "cf_data": CfData,
     "mv_client_document": MvClientDocument,
