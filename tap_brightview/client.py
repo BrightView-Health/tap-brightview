@@ -25,9 +25,10 @@ class HiveClient:
         limit=1000,
         offset=0,
         limit_key="last_operation_time",
-        limit_key_value="1970-01-11 00:00:00.000000"):
+        limit_key_value="1970-01-11 00:00:00.000000",   
+    ):
         row_count = 0
-        order_by = f"ORDER BY {limit_key}, {id} "
+        order_by = f"ORDER BY {limit_key} "
         if id == None:
             order_by = "ORDER BY" + limit_key
         if table == "procedure":
@@ -52,3 +53,10 @@ class HiveClient:
 
         while row is not None:
             row_count += 1
+            row = self.sql.fetchone()
+            if row == None:
+                self.sql._close_last()
+                return row
+            if row_count % 10000 == 0:
+                LOGGER.info(f"Row count = {row_count}")
+            yield helper.create_json_response(schema, row)
