@@ -34,11 +34,11 @@ class HiveClient:
         if table == "procedure":
             table = "`procedure`"
         LOGGER.info("Querying DB")
-        if table == "mv_impact_data_response":
+        if table == "mv_client_document":
             LOGGER.info("Executing query")
             
             LOGGER.info("SELECT * FROM "
-            + "(select *,case when last_operation_time is null then created_datetime else last_operation_time end as incremental_key from mv_impact_data_response ) sub_query "
+            + "(select *,case when last_operation_time is null then created_date else last_operation_time end as incremental_key from mv_impact_data_response ) sub_query "
             + f'WHERE incremental_key >= "{limit_key_value}" '
             + order_by
             + f"LIMIT {limit} OFFSET {offset}")
