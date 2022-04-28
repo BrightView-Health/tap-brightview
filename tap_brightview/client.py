@@ -25,18 +25,20 @@ class HiveClient:
         limit=1000,
         offset=0,
         limit_key="last_operation_time",
-        limit_key_value="1970-01-11 00:00:00.000000",   
+        limit_key_value="1970-01-11 00:00:00.000000",
     ):
         row_count = 0
-        order_by = f"ORDER BY {limit_key} "
+        order_by = f"ORDER BY {limit_key}, {id} "
+
         if id == None:
-            order_by = "ORDER BY" + limit_key
+            order_by = f"ORDER BY {limit_key} "
+
         if table == "procedure":
             table = "`procedure`"
+
         LOGGER.info("Querying DB")
-        if table == "mv_client_document":
-            LOGGER.info("Executing query")
-            
+        
+        if table == "mv_client_document":            
             LOGGER.info("SELECT * FROM "
             + "(select *,case when last_operation_time is null then created_date_time else last_operation_time end as incremental_key from mv_client_document ) sub_query "
             + f'WHERE incremental_key >= "{limit_key_value}" '
@@ -49,7 +51,6 @@ class HiveClient:
             + order_by
             + f"LIMIT {limit} OFFSET {offset}")
             
-            LOGGER.info("End of the query")
         else:
             self.sql.execute("SELECT * "
             + f"FROM {table} "
@@ -58,7 +59,6 @@ class HiveClient:
             + f"LIMIT {limit} OFFSET {offset}")
         LOGGER.info("Query Complete.  Starting rows")
         row = ""
-
         while row is not None:
             row_count += 1
             row = self.sql.fetchone()
