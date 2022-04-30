@@ -3199,7 +3199,7 @@ REQUIRED_TABLES = {
     "activity": Activity,
     "cf_data_hist": CfDataHist,
     "cf_data": CfData,
-#     "mv_client_document": MvClientDocument,
+    "mv_client_document": MvClientDocument,
     "mv_client_dsm5_diag": MvClientDsm5Diag,
     "master_modifier": MasterModifier,
     "activity_detail": ActivityDetail,
