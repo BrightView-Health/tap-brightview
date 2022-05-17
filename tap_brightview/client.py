@@ -54,7 +54,7 @@ class HiveClient:
         else:
             self.sql.execute("SELECT * "
             + f"FROM {table} "
-            + f'WHERE {limit_key} >= "{limit_key_value}" and {limit_key} != 1970-01-01 00:00 ' 
+            + f'WHERE {limit_key} >= "{limit_key_value}" and {limit_key} != "1970-01-01 00:00" ' 
             + order_by
             + f"LIMIT {limit} OFFSET {offset}")
         LOGGER.info("Query Complete.  Starting rows")
