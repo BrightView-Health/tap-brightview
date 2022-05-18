@@ -37,26 +37,13 @@ class HiveClient:
             table = "`procedure`"
 
         LOGGER.info("Querying DB")
-        
-        if table == "mv_client_document":            
-            LOGGER.info("SELECT * FROM "
-            + "(select *,case when last_operation_time is null then created_date_time else last_operation_time end as incremental_key from mv_client_document ) sub_query "
-            + f'WHERE incremental_key >= "{limit_key_value}" '
-            + order_by
-            + f"LIMIT {limit} OFFSET {offset}")
-            
-            self.sql.execute("SELECT * FROM "
-            + "(select *,case when last_operation_time is null then created_date_time else last_operation_time end as incremental_key from mv_client_document) sub_query "
-            + f'WHERE incremental_key >= "{limit_key_value}"  '
-            + order_by
-            + f"LIMIT {limit} OFFSET {offset}")
-            
-        else:
-            self.sql.execute("SELECT * "
+        self.sql.execute(
+            "SELECT * "
             + f"FROM {table} "
-            + f'WHERE {limit_key} >= "{limit_key_value}" and {limit_key} != "1970-01-01 00:00" ' 
+            + f'WHERE {limit_key} >= "{limit_key_value}" '
             + order_by
-            + f"LIMIT {limit} OFFSET {offset}")
+            + f"LIMIT {limit} OFFSET {offset}"
+        )
         LOGGER.info("Query Complete.  Starting rows")
         row = ""
         while row is not None:
