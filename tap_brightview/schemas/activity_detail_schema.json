@@ -209,6 +209,12 @@
                 "null"
             ]
         },
+        "co_visit": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
