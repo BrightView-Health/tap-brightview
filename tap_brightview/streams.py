@@ -3201,7 +3201,7 @@ REQUIRED_TABLES = {
     "cf_data": CfData,
     "mv_client_document": MvClientDocument,
     "mv_client_dsm5_diag": MvClientDsm5Diag,
-    "master_modifier": MasterModifier,
+#     "master_modifier": MasterModifier,
     "activity_detail": ActivityDetail,
     "activity_log": ActivityLog,
     "address": Address,
