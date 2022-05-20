@@ -383,6 +383,12 @@
                 "null"
             ]
         },
+        "require_subscriber_issue_date": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
