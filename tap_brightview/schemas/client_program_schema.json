@@ -299,6 +299,12 @@
                 "null"
             ]
         },
+        "sync_to_mobile_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
