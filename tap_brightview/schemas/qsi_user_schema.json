@@ -71,6 +71,30 @@
                 "null"
             ]
         },
+        "p14c_user_name": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "p14c_user_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "last_change_password_datetime": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "last_change_e_sign_datetime": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
