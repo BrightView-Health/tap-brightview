@@ -107,6 +107,36 @@
                 "null"
             ]
         },
+        "referral_source_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "discharge_reason_dsc_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "service_referral_dsc_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "first_appointment_date": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "organization_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
