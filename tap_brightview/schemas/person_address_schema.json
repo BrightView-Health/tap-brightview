@@ -89,6 +89,12 @@
                 "null"
             ]
         },
+        "facility": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
