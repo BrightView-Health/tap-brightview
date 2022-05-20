@@ -455,6 +455,12 @@
                 "null"
             ]
         },
+        "evv_agency_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
