@@ -167,6 +167,24 @@
                 "null"
             ]
         },
+        "time_types_add_provider_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "carelogic_evv_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "pixel_perfect_form_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
