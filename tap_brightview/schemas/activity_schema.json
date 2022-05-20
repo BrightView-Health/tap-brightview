@@ -305,6 +305,12 @@
                 "null"
             ]
         },
+        "carelogic_evv_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
