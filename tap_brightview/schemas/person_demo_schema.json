@@ -323,6 +323,42 @@
                 "null"
             ]
         },
+        "consumer_identity_comment": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "cessation_treatments_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "birth_first_name": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "birth_middle_name": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "birth_last_name": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "preferred_pronouns_dsc_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
