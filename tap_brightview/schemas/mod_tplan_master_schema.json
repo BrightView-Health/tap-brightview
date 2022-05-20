@@ -41,6 +41,12 @@
                 "null"
             ]
         },
+        "link_interventions_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
