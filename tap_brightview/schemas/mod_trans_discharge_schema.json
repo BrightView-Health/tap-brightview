@@ -161,6 +161,12 @@
                 "null"
             ]
         },
+        "to_referral_source_id": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
