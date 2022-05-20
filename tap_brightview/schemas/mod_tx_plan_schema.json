@@ -137,6 +137,12 @@
                 "null"
             ]
         },
+        "expire_alert_removed_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
