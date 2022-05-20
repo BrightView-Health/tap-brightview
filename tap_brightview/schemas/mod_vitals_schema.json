@@ -167,6 +167,30 @@
                 "null"
             ]
         },
+        "head_occfrt_cir": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "head_occfrt_cir_per": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "bmi_percentile": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "weight_length_percentile": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
