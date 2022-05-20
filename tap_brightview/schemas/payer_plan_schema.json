@@ -227,6 +227,30 @@
                 "null"
             ]
         },
+        "claim_config_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "evv_payer_type_dsc_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "allow_multiple_claims_dos_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "additional_indicator_yn": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
