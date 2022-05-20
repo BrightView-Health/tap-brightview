@@ -299,6 +299,12 @@
                 "null"
             ]
         },
+        "evv_payer_program_type_dsc_id": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
         "last_commit_time": {
             "type": [
                 "string",
